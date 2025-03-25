@@ -1,18 +1,18 @@
 {
-    "displayName": "List users by date of creation",
-    "description": "Created by Kurt to exercise mod-ldp's reporting facility",
-    "instructions": "Choose a start and end date for the user-creation period.",
+    "displayName": "Search MARC field",
+    "description": "Created by MSU Libraries",
+    "instructions": "Fill the marc field and value to search against.",
     "parameters": [
         {
-            "name": "start_date",
-            "displayName": "Earliest date of user creation",
-            "type": "date",
+            "name": "marc_fld",
+            "displayName": "MARC Field",
+            "type": "text",
             "required": false
         },
         {
-            "name": "end_date",
-            "displayName": "Latest date of user creation",
-            "type": "date",
+            "name": "marc_value",
+            "displayName": "Value to Search",
+            "type": "text",
             "required": false
         }
     ]
