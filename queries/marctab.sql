@@ -8,10 +8,10 @@ RETURNS TABLE(
     srs_id text,
     instance_hrid text
     field text,
-    content text)
+    "content" text)
 AS $$
 SELECT srs_id, instance_hrid,field,"content"
-    FROM public.srs_marctab 
+    FROM local.t2xx
     WHERE field ilike marc_fld AND "content" ilike marc_value and sf like marc_sf
 $$
 LANGUAGE SQL
