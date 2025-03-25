@@ -1,18 +1,19 @@
 --ldp:function get_users
-
 CREATE FUNCTION get_users(
-    start_date date DEFAULT '2000-01-01',
-    end_date date DEFAULT '2050-01-01'
+    marc_fld text DEFAULT '245',
+    marc_sf text DEFAULT 'a',
+    marc_value text DEFAULT ''
 )
 RETURNS TABLE(
-    id text,
-    barcode text,
-    created_date timestamp with time zone)
+    srs_id text,
+    instance_hrid text
+    field text,
+    value text)
 AS $$
-SELECT id::text, barcode, created_date
+SELECT srs_id, instance_hrid,field,"content"
 
-    FROM user_users
-    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
+    FROM local.t2xx 
+    WHERE field ilke marc_fld AND "content" ilike marc_value and marc_sf like 'a'
 $$
 LANGUAGE SQL
 STABLE
