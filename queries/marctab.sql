@@ -11,7 +11,7 @@ RETURNS TABLE(
     content text)
 AS $$
 SELECT srs_id, instance_hrid,field,"content"
-    FROM local.t2xx 
+    FROM public.srs_marctab 
     WHERE field ilike marc_fld AND "content" ilike marc_value and sf like marc_sf
 $$
 LANGUAGE SQL
