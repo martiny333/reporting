@@ -13,7 +13,7 @@ AS $$
 SELECT srs_id, instance_hrid,field,"content"
 
     FROM local.t2xx 
-    WHERE field ilke marc_fld AND "content" ilike marc_value and marc_sf like 'a'
+    WHERE field ilike marc_fld AND "content" ilike marc_value and sf like marc_sf
 $$
 LANGUAGE SQL
 STABLE
