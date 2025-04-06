@@ -5,15 +5,14 @@ CREATE FUNCTION items(
     end_date date DEFAULT '2050-01-01'
 )
 RETURNS TABLE(
-    item_hrid text,
+    id text,
     barcode text,
-    created_date timestamp with time zone
-    )
+    created_date timestamp with time zone)
 AS $$
-SELECT item_hrid, barcode, created_date
-    
-    FROM folio_reporting.item_ext
-    WHERE WHERE created_date > start_date and created_date <= end_date
+SELECT id::text, barcode, created_date
+
+    FROM user_users
+    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
 $$
 LANGUAGE SQL
 STABLE
