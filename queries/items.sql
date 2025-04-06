@@ -7,13 +7,13 @@ CREATE FUNCTION items(
 RETURNS TABLE(
     item_hrid text,
     barcode text,
-    created_date timestamp with time zone,
-    updated_date timestamp with time zone )
+    created_date timestamp with time zone
+    )
 AS $$
-SELECT item_hrid, barcode, created_date, updated_date
+SELECT item_hrid, barcode, created_date
     
-    FROM item_ext
-    WHERE WHERE updated_date > start_date and updated_date <= end_date
+    FROM folio_reporting.item_ext
+    WHERE WHERE created_date > start_date and created_date <= end_date
 $$
 LANGUAGE SQL
 STABLE
