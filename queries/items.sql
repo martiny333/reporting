@@ -6,10 +6,11 @@ CREATE FUNCTION items(
 )
 RETURNS TABLE(
     id text,
+    item_hrid text,
     barcode text,
     created_date timestamp with time zone)
 AS $$
-SELECT id::text, barcode, created_date
+SELECT id::text, item_hrid, barcode, created_date
 
     FROM item_ext ie
     WHERE ie.created_date >= start_date AND ie.created_date <= end_date
