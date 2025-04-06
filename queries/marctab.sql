@@ -3,9 +3,7 @@
 DROP FUNCTION IF EXISTS marctab
 
 CREATE FUNCTION marctab(
-    marc_fld text DEFAULT '245',
-    marc_sf text DEFAULT 'a',
-    marc_value text DEFAULT ''
+    marc_value text DEFAULT 'China%'
 )
 RETURNS TABLE(
     srs_id text,
