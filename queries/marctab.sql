@@ -16,7 +16,8 @@ RETURNS TABLE(
 AS $$
 SELECT srs_id, instance_hrid,field,sf,"content"
     FROM local.t2xx
-    WHERE field like marc_fld AND "content" ilike marc_value and sf like marc_sf
+    WHERE "content" ilike marc_value 
+    limit 200
 $$
 LANGUAGE SQL
 STABLE
