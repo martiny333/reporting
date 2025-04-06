@@ -1,5 +1,6 @@
---ldp:function get_users
-CREATE FUNCTION get_users(
+--ldp:function marctab
+
+CREATE FUNCTION marctab(
     marc_fld text DEFAULT '245',
     marc_sf text DEFAULT 'a',
     marc_value text DEFAULT ''
