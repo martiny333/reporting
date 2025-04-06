@@ -11,9 +11,9 @@ RETURNS TABLE(
     field text,
     "content" text)
 AS $$
-SELECT srs_id, instance_hrid,field,"content"
+SELECT srs_id, instance_hrid,field,sf,"content"
     FROM local.t2xx
-    WHERE field ilike marc_fld AND "content" ilike marc_value and sf like marc_sf
+    WHERE field like marc_fld AND "content" ilike marc_value and sf like marc_sf
 $$
 LANGUAGE SQL
 STABLE
