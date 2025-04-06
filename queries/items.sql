@@ -11,8 +11,8 @@ RETURNS TABLE(
 AS $$
 SELECT id::text, barcode, created_date
 
-    FROM user_users
-    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
+    FROM item_ext ie
+    WHERE ie.created_date >= start_date AND ie.created_date <= end_date
 $$
 LANGUAGE SQL
 STABLE
