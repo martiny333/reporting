@@ -11,7 +11,7 @@
         },
         {
             "name": "marc_sf",
-            "displayName": "MARC subfield",
+            "displayName": "MARC Subfield",
             "type": "text",
             "required": false
         },
