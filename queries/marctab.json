@@ -10,6 +10,12 @@
             "required": false
         },
         {
+            "name": "marc_sf",
+            "displayName": "MARC subfield",
+            "type": "text",
+            "required": false
+        },
+        {
             "name": "marc_value",
             "displayName": "Value to Search",
             "type": "text",
