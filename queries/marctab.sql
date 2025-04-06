@@ -16,7 +16,7 @@ RETURNS TABLE(
 AS $$
 SELECT srs_id, instance_hrid,field,sf,"content"
     FROM local.t2xx
-    WHERE "content" ilike marc_value 
+    WHERE "content" ilike 'China%'
     limit 200
 $$
 LANGUAGE SQL
