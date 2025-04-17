@@ -1,0 +1,19 @@
+{
+    "displayName": "List titles by date of payment",
+    "description": "Created by gongd to report title expenditure based on updated dates.",
+    "instructions": "Choose a start and end date for the updated period.",
+    "parameters": [
+        {
+            "name": "start_date",
+            "displayName": "From Date",
+            "type": "date",
+            "required": false
+        },
+        {
+            "name": "end_date",
+            "displayName": "End Date",
+            "type": "date",
+            "required": false
+        }
+    ]
+}
