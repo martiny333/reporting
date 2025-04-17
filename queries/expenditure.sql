@@ -1,5 +1,7 @@
 --ldp:function expdenditure
 
+DROP FUNCTION IF EXISTS expenditure;
+
 CREATE FUNCTION expenditure(
     start_date date DEFAULT '2000-01-01',
     end_date date DEFAULT '2050-01-01'
