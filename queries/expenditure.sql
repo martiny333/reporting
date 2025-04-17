@@ -11,10 +11,14 @@ RETURNS TABLE(
     created_date timestamp with time zone,
     barcode text)
 AS $$
-SELECT id::text, created_date, barcode
-
-    FROM item_ext ie
-    WHERE ie.created_date >= start_date AND ie.created_date <= end_date
+select pl.po_line_number, pl.title_or_package,  count(pl.po_line_number) as "quantity"
+from public.po_lines pl
+left join public.invoice_lines il on il.po_line_id = pl.id
+left join public.invoice_invoices ii on il.invoice_id = ii.id --fiscal_year_id, status 
+where 
+ii.payment_date between symmetric start_date and end_date
+group by pl.po_line_number, pl.title_or_package, "quantity"
+order by "quantity"  Desc
 $$
 LANGUAGE SQL
 STABLE
