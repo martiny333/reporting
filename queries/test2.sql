@@ -5,9 +5,9 @@ CREATE FUNCTION get_users(
     end_date date DEFAULT '2050-01-01'
 )
 RETURNS TABLE(
-    id text,
-    barcode text,
-    created_date timestamp with time zone)
+    uu.id text,
+    uu.barcode text,
+    uu.created_date timestamp with time zone)
 AS $$
 SELECT uu.id::text, uu.barcode, uu.created_date
 
