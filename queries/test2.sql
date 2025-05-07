@@ -5,14 +5,14 @@ CREATE FUNCTION get_users(
     end_date date DEFAULT '2050-01-01'
 )
 RETURNS TABLE(
-    uu.id text,
-    uu.barcode text,
-    uu.created_date timestamp with time zone)
+    id text,
+    barcode text,
+    created_date timestamp with time zone)
 AS $$
-SELECT uu.id::text, uu.barcode, uu.created_date
+SELECT id::text, barcode, created_date
 
-    FROM public.user_users uu
-    WHERE uu.created_date >= start_date AND uu.created_date <= end_date
+    FROM user_users
+    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
 $$
 LANGUAGE SQL
 STABLE
