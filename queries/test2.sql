@@ -9,10 +9,10 @@ RETURNS TABLE(
     barcode text,
     created_date timestamp with time zone)
 AS $$
-SELECT id::text, barcode, created_date
+SELECT uu.id::text, uu.barcode, uu.created_date
 
-    FROM user_users
-    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
+    FROM folio_reporrrting.user_users uu
+    WHERE uu.created_date >= start_date AND uu.created_date <= end_date
 $$
 LANGUAGE SQL
 STABLE
