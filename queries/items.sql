@@ -1,6 +1,6 @@
---ldp:function items
+--ldp:function get_items
 
-CREATE FUNCTION items(
+CREATE FUNCTION get_items(
     start_date date DEFAULT '2000-01-01',
     end_date date DEFAULT '2050-01-01'
 )
