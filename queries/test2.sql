@@ -11,7 +11,7 @@ RETURNS TABLE(
 AS $$
 SELECT uu.id::text, uu.barcode, uu.created_date
 
-    FROM folio_reporrrting.user_users uu
+    FROM public.user_users uu
     WHERE uu.created_date >= start_date AND uu.created_date <= end_date
 $$
 LANGUAGE SQL
