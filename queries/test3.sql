@@ -5,13 +5,12 @@ CREATE FUNCTION get_titles(
     end_date date DEFAULT '2050-01-01'
 )
 RETURNS TABLE(
-    id text,
     barcode text,
-    created_date timestamp with time zone)
+    loan_date timestamp with time zone)
 AS $$
-select pl.po_line_number, pl.title_or_package
-from public.po_lines pl
-WHERE pl.metadata__created_date >= start_date 
+select barcode, loan_date
+from loans_items
+WHERE loan_date >= start_date 
 $$
 LANGUAGE SQL
 STABLE
