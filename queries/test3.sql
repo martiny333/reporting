@@ -9,10 +9,9 @@ RETURNS TABLE(
     barcode text,
     created_date timestamp with time zone)
 AS $$
-SELECT id::text, barcode, created_date
-
-    FROM user_users
-    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
+select pl.po_line_number, pl.title_or_package
+from public.po_lines pl
+WHERE pl.metadata__created_date >= start_date 
 $$
 LANGUAGE SQL
 STABLE
