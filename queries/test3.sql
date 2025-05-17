@@ -10,7 +10,7 @@ RETURNS TABLE(
 AS $$
 select barcode, loan_date
 from loans_items
-WHERE loan_date >= start_date 
+WHERE loans_items.loan_date >= start_date 
 $$
 LANGUAGE SQL
 STABLE
