@@ -1,4 +1,4 @@
---ldp:function get_titles
+--metadb:function get_titles
 
 CREATE FUNCTION get_titles(
     start_date date DEFAULT '2000-01-01',
@@ -9,7 +9,7 @@ RETURNS TABLE(
     loan_date timestamp with time zone)
 AS $$
 select barcode, loan_date
-from loans_items
+from folio_derived.loans_items
 WHERE loans_items.loan_date >= start_date 
 $$
 LANGUAGE SQL
