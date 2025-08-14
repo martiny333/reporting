@@ -1,6 +1,6 @@
 {
-    "displayName": "List users by date of creation",
-    "description": "Created by Dao to disolay title expenditures",
+    "displayName": "List loans by date",
+    "description": "Created by Dao to list loans",
     "instructions": "Choose a start and end date for the user-creation period.",
     "parameters": [
         {
