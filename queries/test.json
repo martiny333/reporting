@@ -6,7 +6,7 @@
         {
             "name": "rec_number",
             "displayName": "Numbers of records to fetch",
-            "type": "text",
+            "type": "integer",
             "required": true
         }
     ]
