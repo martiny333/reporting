@@ -1,18 +1,16 @@
---ldp:function get_users
+--metadb:function get_items
 
-CREATE FUNCTION get_users(
-    start_date date DEFAULT '2000-01-01',
-    end_date date DEFAULT '2050-01-01'
+CREATE FUNCTION get_items(
+    rec_number INTEGER DEFAULT 100,
 )
 RETURNS TABLE(
     id text,
-    barcode text,
-    created_date timestamp with time zone)
+    barcode text)
 AS $$
-SELECT id::text, barcode, created_date
+SELECT id::text, barcode
 
-    FROM user_users
-    WHERE user_users.created_date >= start_date AND user_users.created_date <= end_date
+    FROM folio_derived.item_ext
+    limit rec_number
 $$
 LANGUAGE SQL
 STABLE
