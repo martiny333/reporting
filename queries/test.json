@@ -7,7 +7,7 @@
             "name": "rec_number",
             "displayName": "Numbers of records to fetch",
             "type": "integer",
-            "required": true
+            "required": false
         }
     ]
 }
