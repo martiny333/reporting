@@ -1,19 +1,13 @@
 {
-    "displayName": "List users by date of creation",
-    "description": "Created by Kurt to exercise mod-ldp's reporting facility",
-    "instructions": "Choose a start and end date for the user-creation period.",
+    "displayName": "List item records",
+    "description": "Created by gongd to test reporting facility",
+    "instructions": "Choose how many records to retrieve.",
     "parameters": [
         {
-            "name": "start_date",
-            "displayName": "Earliest date of user creation",
-            "type": "date",
-            "required": false
-        },
-        {
-            "name": "end_date",
-            "displayName": "Latest date of user creation",
-            "type": "date",
-            "required": false
+            "name": "rec_number",
+            "displayName": "Numbers of records to fetch",
+            "type": "text",
+            "required": true
         }
     ]
 }
