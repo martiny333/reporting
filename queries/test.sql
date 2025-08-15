@@ -4,10 +4,10 @@ CREATE FUNCTION get_items(
     rec_number INTEGER DEFAULT 100,
 )
 RETURNS TABLE(
-    id text,
+    item_id text,
     barcode text)
 AS $$
-SELECT id::text, barcode
+SELECT item_id::text, barcode
 
     FROM folio_derived.item_ext
     limit rec_number
